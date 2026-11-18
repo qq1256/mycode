@@ -33,12 +33,13 @@ int* array_at(Array *a,int index) {
 }
 
 void array_inflate(Array *a,int more_size) {
-    int *p = (int*)malloc(sizeof(int)*(a -> size + more_size));
-    for (int i = 0; i < (a -> size); i++) {
-        p[i] = a -> array[i];
-    }
-    free(a -> array);
-    a -> array = p;
+    // int *p = (int*)malloc(sizeof(int)*(a -> size + more_size));
+    // for (int i = 0; i < (a -> size); i++) {
+    //     p[i] = a -> array[i];
+    // }
+    // free(a -> array);
+    // a -> array = p;
+    a -> array = (int*)realloc(a -> array, sizeof(int)*(a -> size + more_size));
     a -> size += more_size;
 
 }
