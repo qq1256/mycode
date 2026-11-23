@@ -6,4 +6,12 @@ typedef struct _node {
     struct _node *next;
 } Node;
 
+typedef struct _list {
+    Node *head;
+} List;
+
+void add(List *pList, int num);
+
+void print(List *pList);
+
 #endif
